@@ -1,6 +1,6 @@
 package com.example.tours.model;
 
-import com.example.tours.model.enums.Difficulty;
+import com.example.tours.model.enums.Difficult;
 import com.example.tours.model.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -17,7 +18,7 @@ public class Tour extends Entity{
     private long authorId;
     private String name;
     private String description;
-    private Difficulty difficulty;
+    private Difficult difficulty;
     private List<TravelTimeAndMethod> travelTimeAndMethods;
     private Status status;
     private double price;

@@ -1,5 +1,5 @@
 package com.example.tours.model.enums;
 
-public enum Difficulty {
+public enum Difficult {
     EASY, MEDIUM, HARD
 }
