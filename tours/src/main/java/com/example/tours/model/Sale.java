@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class Sale {
+public class Sale extends Entity {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private int percent;
