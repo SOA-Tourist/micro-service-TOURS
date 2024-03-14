@@ -1,4 +1,9 @@
 package com.example.tours.repository;
 
-public interface TourRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface TourRepository extends MongoRepository<TourRepository, Integer> {
+
 }
