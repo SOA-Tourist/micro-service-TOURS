@@ -10,6 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document
 public class PublicRequest extends Entity {
-    private CheckpointRequestStatus status;
+    //private CheckpointRequestStatus status;
     private String comment;
 }

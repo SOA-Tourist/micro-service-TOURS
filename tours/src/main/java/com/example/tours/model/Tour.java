@@ -19,7 +19,7 @@ public class Tour extends Entity{
     private String name;
     private String description;
     private Difficult difficulty;
-    private List<TravelTimeAndMethod> travelTimeAndMethods;
+    //private List<TravelTimeAndMethod> travelTimeAndMethods;
     private Status status;
     private double price;
     private String tags;
@@ -27,7 +27,7 @@ public class Tour extends Entity{
     private List<Checkpoint> checkpoints;
     private double distance;
     private LocalDateTime publishTime;
-    private List<TourReview> tourReviews;
+    //private List<TourReview> tourReviews;
     private LocalDateTime archiveTime;
     private List<FavouriteTour> favouriteTours;
     private List<CompositeTour> compositeTours;
