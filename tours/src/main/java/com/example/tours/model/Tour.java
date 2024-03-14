@@ -15,20 +15,20 @@ import java.util.List;
 @NoArgsConstructor
 @Document
 public class Tour extends Entity{
-    private long authorId;
-    private String name;
-    private String description;
-    private Difficult difficulty;
+    private long AuthorId;
+    private String Name;
+    private String Description;
+    private Difficult Difficulty;
     //private List<TravelTimeAndMethod> travelTimeAndMethods;
-    private Status status;
-    private double price;
-    private String tags;
+    private Status Status;
+    private double Price;
+    private String Tags;
    // private List<Equipment> tourEquipment;
    // private List<Checkpoint> checkpoints;
-    private double distance;
-    private LocalDateTime publishTime;
+    private double Distance;
+    private LocalDateTime PublishTime;
     //private List<TourReview> tourReviews;
-    private LocalDateTime archiveTime;
+    private LocalDateTime ArchiveTime;
    // private List<FavouriteTour> favouriteTours;
    // private List<CompositeTour> compositeTours;
 
