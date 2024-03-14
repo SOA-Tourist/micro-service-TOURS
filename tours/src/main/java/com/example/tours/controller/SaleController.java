@@ -1,5 +1,7 @@
 package com.example.tours.controller;
 
+import com.example.tours.dto.SaleDto;
+import com.example.tours.mapper.SaleMapper;
 import com.example.tours.model.Sale;
 import com.example.tours.model.Tour;
 import com.example.tours.service.SaleService;
@@ -7,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +23,11 @@ public class SaleController {
     @GetMapping
     public ResponseEntity<List<Sale>> getAll() {
         return new ResponseEntity<>(saleService.getAll(), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Sale> create(@RequestBody SaleDto dto) {
+        return new ResponseEntity<>(saleService.create(SaleMapper.DtoToSale(dto)), HttpStatus.OK);
     }
 
 }

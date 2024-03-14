@@ -1,18 +1,14 @@
-package com.example.tours.model;
+package com.example.tours.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
-public class Sale extends Entity{
+public class SaleDto {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private int percent;
