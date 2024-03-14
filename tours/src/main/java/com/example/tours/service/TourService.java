@@ -1,5 +1,6 @@
 package com.example.tours.service;
 
+import com.example.tours.model.Sale;
 import com.example.tours.model.Tour;
 import com.example.tours.repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +16,7 @@ public class TourService {
     public List<Tour> getAll() {
         return tourRepository.findAll();
     }
-
+    public Tour create(Tour tour) {
+        return tourRepository.save(tour);
+    }
 }

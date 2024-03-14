@@ -23,13 +23,13 @@ public class Tour extends Entity{
     private Status status;
     private double price;
     private String tags;
-    private List<Equipment> tourEquipment;
-    private List<Checkpoint> checkpoints;
+   // private List<Equipment> tourEquipment;
+   // private List<Checkpoint> checkpoints;
     private double distance;
     private LocalDateTime publishTime;
     //private List<TourReview> tourReviews;
     private LocalDateTime archiveTime;
-    private List<FavouriteTour> favouriteTours;
-    private List<CompositeTour> compositeTours;
+   // private List<FavouriteTour> favouriteTours;
+   // private List<CompositeTour> compositeTours;
 
 }
