@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SaleDto {
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
-    private int percent;
-    private long authorId;
+    private LocalDateTime StartDate;
+    private LocalDateTime EndDate;
+    private int Percent;
+    private long AuthorId;
 }
