@@ -4,6 +4,9 @@ import com.example.tours.dto.TourDto;
 import com.example.tours.mapper.TourMapper;
 import com.example.tours.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +23,9 @@ public class TourController {
     private TourService tourService;
 
     @GetMapping("/for_author/{authorId}")
-    public ResponseEntity<List<TourDto>> getAllForUser(@PathVariable long authorId) {
-        return new ResponseEntity<>(tourService.getAllForUser(authorId), HttpStatus.OK);
+    public ResponseEntity<Page<TourDto>> getAllForUser(@PathVariable long authorId, @RequestParam(defaultValue = "0") int page,
+    @RequestParam(defaultValue = "10") int size) {
+        return new ResponseEntity<>(tourService.getAllForUser(authorId, page, size), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

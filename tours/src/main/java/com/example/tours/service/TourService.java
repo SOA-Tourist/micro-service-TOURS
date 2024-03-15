@@ -6,6 +6,10 @@ import com.example.tours.model.Sale;
 import com.example.tours.model.Tour;
 import com.example.tours.repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +19,10 @@ public class TourService {
     @Autowired
     private TourRepository tourRepository;
 
-    public List<TourDto> getAllForUser(long authorId) {
-        return TourMapper.mapToDtoList(tourRepository.findAllByAuthorId(authorId));
+    public Page<TourDto> getAllForUser(long authorId, int pageNumber, int pageSize) {
+        List<Tour> tours = tourRepository.findAllByAuthorId(authorId);
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        return new PageImpl<>(TourMapper.mapToDtoList(tours), pageable, tours.size());
     }
 
     public TourDto getById(String id) {
