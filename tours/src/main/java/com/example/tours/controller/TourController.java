@@ -19,8 +19,8 @@ public class TourController {
     @Autowired
     private TourService tourService;
 
-    @GetMapping
-    public ResponseEntity<List<TourDto>> getAllForUser(long authorId) {
+    @GetMapping("/for_author/{authorId}")
+    public ResponseEntity<List<TourDto>> getAllForUser(@PathVariable long authorId) {
         return new ResponseEntity<>(tourService.getAllForUser(authorId), HttpStatus.OK);
     }
 
