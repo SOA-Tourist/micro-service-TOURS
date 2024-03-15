@@ -29,4 +29,10 @@ public class TourController {
     public ResponseEntity<Tour> create(@RequestBody Tour dto) {
         return new ResponseEntity<>(tourService.create(dto), HttpStatus.OK);
     }
+
+    @PutMapping
+    public ResponseEntity<Tour> update(@PathVariable String id, @RequestBody Tour tour) {
+        tour.setId(id);
+        return new ResponseEntity<>(tourService.update(id, tour), HttpStatus.OK);
+    }
 }

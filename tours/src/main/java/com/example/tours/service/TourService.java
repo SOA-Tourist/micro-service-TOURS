@@ -19,4 +19,8 @@ public class TourService {
     public Tour create(Tour tour) {
         return tourRepository.save(tour);
     }
+
+    public Tour update(String id, Tour tour) {
+        return tourRepository.existsById(id) ?  tourRepository.save(tour) : null;
+    }
 }
