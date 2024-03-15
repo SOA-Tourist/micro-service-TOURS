@@ -16,15 +16,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TourDto {
-    private String id;
-    private long authorId;
-    private String name;
-    private String description;
-    private Difficult difficulty;
-    private Status status;
-    private double price;
-    private String tags;
-    private double distance;
-    private LocalDateTime publishTime;
-    private LocalDateTime archiveTime;
+    private String Id;
+    private long AuthorId;
+    private String Name;
+    private String Description;
+    private Difficult Difficulty;
+    private Status Status;
+    private double Price;
+    private String Tags;
+    private double Distance;
+    private LocalDateTime PublishTime;
+    private LocalDateTime ArchiveTime;
 }
