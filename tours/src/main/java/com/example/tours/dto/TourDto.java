@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TourDto {
-    private int id;
+    private String id;
     private long authorId;
     private String name;
     private String description;

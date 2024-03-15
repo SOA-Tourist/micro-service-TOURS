@@ -21,18 +21,23 @@ public class TourController {
     private TourService tourService;
 
     @GetMapping
-    public ResponseEntity<List<Tour>> getAll() {
+    public ResponseEntity<List<TourDto>> getAll() {
         return new ResponseEntity<>(tourService.getAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<TourDto> getById(@PathVariable String id) {
+        return new ResponseEntity<>(tourService.getById(id), HttpStatus.OK);
+    }
+
     @PostMapping
-    public ResponseEntity<Tour> create(@RequestBody Tour dto) {
+    public ResponseEntity<TourDto> create(@RequestBody TourDto dto) {
         return new ResponseEntity<>(tourService.create(dto), HttpStatus.OK);
     }
 
     @PutMapping
-    public ResponseEntity<Tour> update(@PathVariable String id, @RequestBody Tour tour) {
-        tour.setId(id);
-        return new ResponseEntity<>(tourService.update(id, tour), HttpStatus.OK);
+    public ResponseEntity<TourDto> update(@PathVariable String id, @RequestBody TourDto dto) {
+        dto.setId(id);
+        return new ResponseEntity<>(tourService.update(id, dto), HttpStatus.OK);
     }
 }
