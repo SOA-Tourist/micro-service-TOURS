@@ -19,10 +19,8 @@ public class TourService {
     @Autowired
     private TourRepository tourRepository;
 
-    public Page<TourDto> getAllForUser(long authorId, int pageNumber, int pageSize) {
-        List<Tour> tours = tourRepository.findAllByAuthorId(authorId);
-        Pageable pageable = PageRequest.of(pageNumber, pageSize);
-        return new PageImpl<>(TourMapper.mapToDtoList(tours), pageable, tours.size());
+    public List<TourDto> getAllForUser(long authorId) {
+        return TourMapper.mapToDtoList(tourRepository.findAllByAuthorId(authorId));
     }
 
     public TourDto getById(String id) {

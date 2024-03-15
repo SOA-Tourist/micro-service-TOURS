@@ -23,9 +23,8 @@ public class TourController {
     private TourService tourService;
 
     @GetMapping("/for_author/{authorId}")
-    public ResponseEntity<Page<TourDto>> getAllForUser(@PathVariable long authorId, @RequestParam(defaultValue = "0") int page,
-                                                       @RequestParam(defaultValue = "10") int size) {
-        return new ResponseEntity<>(tourService.getAllForUser(authorId, page, size), HttpStatus.OK);
+    public ResponseEntity<List<TourDto>> getAllForUser(@PathVariable long authorId) {
+        return new ResponseEntity<>(tourService.getAllForUser(authorId), HttpStatus.OK);
     }
     @GetMapping("/{id}")
     public ResponseEntity<TourDto> getById(@PathVariable String id) {
