@@ -1,11 +1,10 @@
 package com.example.tours.controller;
 
 import com.example.tours.dto.TourDto;
-import com.example.tours.model.Tour;
+import com.example.tours.mapper.TourMapper;
 import com.example.tours.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +20,8 @@ public class TourController {
     private TourService tourService;
 
     @GetMapping
-    public ResponseEntity<List<TourDto>> getAll() {
-        return new ResponseEntity<>(tourService.getAll(), HttpStatus.OK);
+    public ResponseEntity<List<TourDto>> getAllForUser(long authorId) {
+        return new ResponseEntity<>(tourService.getAllForUser(authorId), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

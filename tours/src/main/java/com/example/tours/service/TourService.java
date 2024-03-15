@@ -15,8 +15,8 @@ public class TourService {
     @Autowired
     private TourRepository tourRepository;
 
-    public List<TourDto> getAll() {
-        return TourMapper.mapToDtoList(tourRepository.findAll());
+    public List<TourDto> getAllForUser(long authorId) {
+        return TourMapper.mapToDtoList(tourRepository.findAllByAuthorId(authorId));
     }
 
     public TourDto getById(String id) {
