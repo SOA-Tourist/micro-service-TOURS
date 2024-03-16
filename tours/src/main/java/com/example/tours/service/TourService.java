@@ -35,4 +35,26 @@ public class TourService {
         Tour tour =  TourMapper.mapToEntity(dto);
         return tourRepository.existsById(id) ?  TourMapper.mapToDto(tourRepository.save(tour)) : null;
     }
+    public TourDto updateNew(String id, TourDto dto){
+        TourDto tura = TourMapper.mapToDto(tourRepository.findById(id).orElse(null));
+        if(tura==null)
+        {
+           tura=create(dto);
+           return tura;
+        }else{
+            tura.setId(id);
+            tura.setName(dto.getName());
+            tura.setDescription(dto.getDescription());
+            tura.setDifficulty(dto.getDifficulty());
+            tura.setTags(dto.getTags());
+            tura.setAuthorId(dto.getAuthorId());
+            tura.setStatus(dto.getStatus());
+            tura.setPrice(dto.getPrice());
+            tura.setDistance(dto.getDistance());
+            tura.setPublishTime(dto.getPublishTime());
+            tura.setArchiveTime(dto.getArchiveTime());
+            Tour turaNorm = TourMapper.mapToEntity(tura);
+            return TourMapper.mapToDto(tourRepository.save(turaNorm));
+        }
+    }
 }
