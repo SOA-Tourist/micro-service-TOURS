@@ -33,12 +33,13 @@ public class TourController {
 
     @PostMapping
     public ResponseEntity<TourDto> create(@RequestBody TourDto dto) {
+        dto.setId(null);
         return new ResponseEntity<>(tourService.create(dto), HttpStatus.OK);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<TourDto> update(@PathVariable String id, @RequestBody TourDto dto) {
         dto.setId(id);
-        return new ResponseEntity<>(tourService.update(id, dto), HttpStatus.OK);
+        return new ResponseEntity<>(tourService.updateNew(id, dto), HttpStatus.OK);
     }
 }

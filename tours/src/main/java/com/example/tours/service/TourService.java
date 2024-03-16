@@ -45,7 +45,7 @@ public class TourService {
             tura.setId(id);
             tura.setName(dto.getName());
             tura.setDescription(dto.getDescription());
-            tura.setDifficulty(dto.getDifficulty());
+            tura.setDifficult(dto.getDifficult());
             tura.setTags(dto.getTags());
             tura.setAuthorId(dto.getAuthorId());
             tura.setStatus(dto.getStatus());

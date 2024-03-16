@@ -14,7 +14,7 @@ public class TourMapper {
         tourDto.setAuthorId(tour.getAuthorId());
         tourDto.setName(tour.getName());
         tourDto.setDescription(tour.getDescription());
-        tourDto.setDifficulty(tour.getDifficulty());
+        tourDto.setDifficult(tour.getDifficult());
         tourDto.setStatus(tour.getStatus());
         tourDto.setPrice(tour.getPrice());
         tourDto.setTags(tour.getTags());
@@ -30,7 +30,7 @@ public class TourMapper {
         tour.setAuthorId(tourDto.getAuthorId());
         tour.setName(tourDto.getName());
         tour.setDescription(tourDto.getDescription());
-        tour.setDifficulty(tourDto.getDifficulty());
+        tour.setDifficult(tourDto.getDifficult());
         tour.setStatus(tourDto.getStatus());
         tour.setPrice(tourDto.getPrice());
         tour.setTags(tourDto.getTags());

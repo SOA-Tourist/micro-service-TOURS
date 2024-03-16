@@ -20,7 +20,7 @@ public class TourDto {
     private long AuthorId;
     private String Name;
     private String Description;
-    private Difficult Difficulty;
+    private Difficult Difficult;
     private Status Status;
     private double Price;
     private String Tags;

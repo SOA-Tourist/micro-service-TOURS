@@ -18,7 +18,7 @@ public class Tour extends Entity{
     private long authorId;
     private String name;
     private String description;
-    private Difficult difficulty;
+    private Difficult difficult;
     //private List<TravelTimeAndMethod> travelTimeAndMethods;
     private Status status;
     private double price;
