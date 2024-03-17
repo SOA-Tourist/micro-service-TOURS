@@ -13,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -59,11 +60,12 @@ public class TourService {
         }
     }
 
-    public TourDto archive(String id, TourDto dto){
+    public TourDto archive(String id){
         TourDto tura = TourMapper.mapToDto(tourRepository.findById(id).orElse(null));
         if(tura!=null)
         {
             tura.setStatus(Status.ARCHIVED);
+            tura.setArchiveTime(LocalDateTime.now());
             Tour turaNorm = TourMapper.mapToEntity(tura);
             return TourMapper.mapToDto(tourRepository.save(turaNorm));
         }else{

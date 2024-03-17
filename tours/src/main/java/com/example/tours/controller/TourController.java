@@ -43,12 +43,11 @@ public class TourController {
         return new ResponseEntity<>(tourService.updateNew(id, dto), HttpStatus.OK);
     }
     @PutMapping("/archive/{id}")
-    public ResponseEntity<TourDto> archive(@PathVariable String id, @RequestBody TourDto dto) {
-        dto.setId(id);
-        TourDto returnDto = tourService.publish(id, dto);
+    public ResponseEntity<TourDto> archive(@PathVariable String id) {
+        TourDto returnDto = tourService.archive(id);
         if(returnDto==null)
         {
-            return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }else
         {
             return new ResponseEntity<>(returnDto, HttpStatus.OK);
