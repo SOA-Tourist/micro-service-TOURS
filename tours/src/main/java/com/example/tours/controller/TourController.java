@@ -42,4 +42,28 @@ public class TourController {
         dto.setId(id);
         return new ResponseEntity<>(tourService.updateNew(id, dto), HttpStatus.OK);
     }
+    @PutMapping("/archive/{id}")
+    public ResponseEntity<TourDto> archive(@PathVariable String id, @RequestBody TourDto dto) {
+        dto.setId(id);
+        TourDto returnDto = tourService.publish(id, dto);
+        if(returnDto==null)
+        {
+            return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
+        }else
+        {
+            return new ResponseEntity<>(returnDto, HttpStatus.OK);
+        }
+    }
+    @PutMapping("/publish/{id}")
+    public ResponseEntity<TourDto> publish(@PathVariable String id, @RequestBody TourDto dto) {
+        dto.setId(id);
+        TourDto returnDto = tourService.publish(id, dto);
+        if(returnDto==null)
+        {
+            return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
+        }else
+        {
+            return new ResponseEntity<>(returnDto, HttpStatus.OK);
+        }
+    }
 }

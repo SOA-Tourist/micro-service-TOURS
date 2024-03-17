@@ -4,6 +4,7 @@ import com.example.tours.dto.TourDto;
 import com.example.tours.mapper.TourMapper;
 import com.example.tours.model.Sale;
 import com.example.tours.model.Tour;
+import com.example.tours.model.enums.Status;
 import com.example.tours.repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -55,6 +56,30 @@ public class TourService {
             tura.setArchiveTime(dto.getArchiveTime());
             Tour turaNorm = TourMapper.mapToEntity(tura);
             return TourMapper.mapToDto(tourRepository.save(turaNorm));
+        }
+    }
+
+    public TourDto archive(String id, TourDto dto){
+        TourDto tura = TourMapper.mapToDto(tourRepository.findById(id).orElse(null));
+        if(tura!=null)
+        {
+            tura.setStatus(Status.ARCHIVED);
+            Tour turaNorm = TourMapper.mapToEntity(tura);
+            return TourMapper.mapToDto(tourRepository.save(turaNorm));
+        }else{
+            return null;
+        }
+    }
+
+    public TourDto publish(String id, TourDto dto){
+        TourDto tura = TourMapper.mapToDto(tourRepository.findById(id).orElse(null));
+        if(tura!=null)
+        {
+            tura.setStatus(Status.PUBLISHED);
+            Tour turaNorm = TourMapper.mapToEntity(tura);
+            return TourMapper.mapToDto(tourRepository.save(turaNorm));
+        }else{
+            return null;
         }
     }
 }
