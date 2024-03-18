@@ -1,15 +1,17 @@
-package com.example.tours.model;
+package com.example.tours.dto;
 
+import com.example.tours.model.Coordinate;
+import com.example.tours.model.PublicRequest;
+import com.example.tours.model.Tour;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
-public class Checkpoint extends Entity{
+public class CheckpointDto {
+    private String Id;
     private String name;
     private String description;
     private String pictureURL;
