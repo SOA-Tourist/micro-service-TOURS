@@ -15,7 +15,9 @@ public class CheckpointMapper {
         checkpointDto.setName(checkpoint.getName());
         checkpointDto.setDescription(checkpoint.getDescription());
         checkpointDto.setPictureURL(checkpoint.getPictureURL());
-        checkpointDto.setCoordinates(checkpoint.getCoordinates());
+        checkpointDto.setLatitude(checkpoint.getLatitude());
+        checkpointDto.setLongitude(checkpoint.getLongitude());
+        //checkpointDto.setCoordinates(checkpoint.getCoordinates());
         checkpointDto.setTourId(checkpoint.getTourId());
         checkpointDto.setTour(checkpoint.getTour());
         checkpointDto.setRequest(checkpoint.getRequest());
@@ -28,7 +30,9 @@ public class CheckpointMapper {
         checkpoint.setName(checkpointDto.getName());
         checkpoint.setDescription(checkpointDto.getDescription());
         checkpoint.setPictureURL(checkpointDto.getPictureURL());
-        checkpoint.setCoordinates(checkpointDto.getCoordinates());
+        checkpoint.setLatitude(checkpointDto.getLatitude());
+        checkpoint.setLongitude(checkpointDto.getLongitude());
+        //checkpoint.setCoordinates(checkpointDto.getCoordinates());
         checkpoint.setTourId(checkpointDto.getTourId());
         checkpoint.setTour(checkpointDto.getTour());
         checkpoint.setRequest(checkpointDto.getRequest());

@@ -2,6 +2,8 @@ package com.example.tours.controller;
 
 import com.example.tours.dto.CheckpointDto;
 import com.example.tours.dto.TourDto;
+import com.example.tours.model.PublicRequest;
+import com.example.tours.model.enums.CheckpointRequestStatus;
 import com.example.tours.service.CheckpointService;
 import com.example.tours.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,10 @@ public class CheckpointController {
     @PostMapping
     public ResponseEntity<CheckpointDto> create(@RequestBody CheckpointDto dto) {
         dto.setId(null);
+        PublicRequest request = new PublicRequest();
+        request.setComment("");
+        request.setStatus(CheckpointRequestStatus.Accepted);
+        dto.setRequest(request);
         return new ResponseEntity<>(checkpointService.create(dto), HttpStatus.OK);
     }
 

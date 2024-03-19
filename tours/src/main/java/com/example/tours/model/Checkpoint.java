@@ -13,7 +13,9 @@ public class Checkpoint extends Entity{
     private String name;
     private String description;
     private String pictureURL;
-    private Coordinate coordinates;
+    //private Coordinate coordinates;
+    private double latitude;
+    private double longitude;
     private String tourId;
     private PublicRequest request;
     private Tour tour;

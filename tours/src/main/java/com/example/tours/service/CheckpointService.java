@@ -33,7 +33,9 @@ public class CheckpointService {
             checkpoint.setName(dto.getName());
             checkpoint.setDescription(dto.getDescription());
             checkpoint.setPictureURL(dto.getPictureURL());
-            checkpoint.setCoordinates(dto.getCoordinates());
+            checkpoint.setLongitude(dto.getLongitude());
+            checkpoint.setLatitude(dto.getLatitude());
+            //checkpoint.setCoordinates(dto.getCoordinates());
             checkpoint.setTourId(dto.getTourId());
             checkpoint.setTour(dto.getTour());
             checkpoint.setRequest(dto.getRequest());
